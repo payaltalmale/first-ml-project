@@ -44,3 +44,25 @@ to check sataus which file availble in github
 '''
 git status
 '''
+to create Doker file
+'''
+pip install  docker
+'''
+BUILD DOCKER IMAGE
+'''
+docker build -t <image_name>:<tagname> .
+note: image name for docker must be lowercase
+to list docker image
+'''
+docker images
+'''
+run docker images
+'''
+docker run -p 5000:5000 -e PORT =5000 image id
+# - p specify port number -e environment variable port
+ to check runiing docker container
+ '''
+ docker ps
+ '''
+ docker stop <container_id>
+

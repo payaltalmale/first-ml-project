@@ -1,0 +1,26 @@
+# your workflow name
+name : Deploy to  heroku
+
+# Run workflow on every push to main branch
+on:
+  push:
+     branches: [main]
+
+# your workflow jobs
+jobs:
+   build:
+      runs-on: ubantu-latest #machine name
+      steps:
+      # check-out your repository
+      name : checkout
+      uses: action/checkout@v2
+
+###   IMPORTANT PART 
+      name: Build, Push and Release a Docker container to Heroku # your custom step name
+      uses: gonuit/heroku-docker-deploy@v1.3.3 # github action name (leave it as it is)
+      with:
+          email: ${{ secrets.HEROKU_EMAIL}}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME}}
+          dockerfile_name: DOKERFILE 
+          dockerfile_directory: ./
