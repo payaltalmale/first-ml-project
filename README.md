@@ -66,3 +66,8 @@ docker run -p 5000:5000 -e PORT =5000 image id
  '''
  docker stop <container_id>
 
+housing folder is creted beacuse we are work on housing prdiction and inside this folder we are going to create lots of file
+
+setup.py is just similar to requirements.txt file if we dont want to pass pip install -r  requirement.txt so tipe code in setup.py and then pass python setup.py
+
+now if we python setup.py install it will install the library inthis folder
